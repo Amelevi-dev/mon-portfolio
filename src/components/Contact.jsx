@@ -1,118 +1,48 @@
-import { useState } from "react";
-import "../assets/fontawesome-free-6.7.2-web/css/all.min.css";
-import moi from "../assets/images/moi1.jpg";
+import '../assets/fontawesome-free-6.7.2-web/css/all.min.css';
+import moi from '../assets/images/moi1.jpg';
 
-export const Contact = () => {
-  const [formData, setFormData] = useState({
-    nom_prenom: "",
-    email: "",
-    message: "",
-  });
+export const Contact = () =>{
+    return <section class="flex justify-between items-center w-full h-[12Ovh] " id='contact'>
+        <div class="w-1/2 flex justify-center items-center">
+          <form action="traitement.php" method='post' class="w-[430px] "  data-aos="fade-up">
+            <button class="bg-purple-600 text-white py-6 px-8 rounded-lg tex-3xl mb-5">
+                <p className=' tracking-wider '>AGA</p>
+            </button>
+            <h1 class="font-bold text-2xl ">Contactez-moi maintenant</h1> <br />
 
-  const [responseMsg, setResponseMsg] = useState("");
+            <p class="text-md">Contactez-moi et faisons de vos idées une réalité 😎</p>
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+            <div class="border-b-2 border-[darkgray]  my-10 flex items-center justify-center gap-8 ">
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // empêche le rechargement de la page
+                    <a href="https://www.facebook.com/amelevigloria.amededzisso"><i class="fa-brands fa-square-facebook text-2xl hover:text-purple-400 animate-bounce hidden transition-all transition-discrete"></i></a>
+                    <a href="https://www.instagram.com/amelevigloria?igsh=MTM3NGs5MjVvbThleA=="><i class="fa-brands fa-square-instagram  text-2xl  hover:text-purple-400 animate-bounce hidden transition-all transition-discrete"></i></a>
+                    <a href="https://www.linkedin.com/in/amelevi-gloria-amededzisso-674939372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin text-2xl  hover:text-purple-400 animate-bounce hidden transition-all transition-discrete"></i></a>
+                    <a href="tel:+22390368806"><i class="fa-brands fa-square-whatsapp text-2xl  hover:text-purple-400 animate-bounce hidden transition-all transition-discrete"></i></a>
+            </div>
 
-    try {
-      const response = await fetch("http://localhost/Portfolio/traitement.php", {
-        method: "POST",
-        body: new URLSearchParams(formData), // envoie comme un formulaire HTML
-      });
 
-      const result = await response.json(); // récupère le JSON renvoyé par PHP
-      setResponseMsg(result.message);
-    } catch (error) {
-      setResponseMsg("Erreur lors de l'envoi du message.");
-      console.error(error);
-    }
-  };
+               <div class=" flex flex-col">
+                <label class="text-md mb-1 font-bold" >Nom & Prénom:</label>
+                <input type="text" name='nom_prenom' id='nom_prenom' class="border-2 p-3 rounded-md text-sm  outline-0" />
+            </div>
+            <div class=" flex flex-col">
+                <label class="text-md mb-1 font-bold" >Email:</label>
+                <input type="text" name='email' id='email' class="border-2 p-3 rounded-md text-sm outline-0" placeholder="gloria@gmail.com" />
+            </div>
 
-  return (
-    <section
-      className="flex justify-between items-center w-full h-[120vh]"
-      id="contact"
-    >
-      <div className="w-1/2 flex justify-center items-center">
-        <form onSubmit={handleSubmit} className="w-[430px]" data-aos="fade-up">
-          <button className="bg-purple-600 text-white py-6 px-8 rounded-lg text-3xl mb-5">
-            <p className="tracking-wider">AGA</p>
-          </button>
-          <h1 className="font-bold text-2xl">Contactez-moi maintenant</h1>
-          <br />
-          <p className="text-md">
-            Contactez-moi et faisons de vos idées une réalité 😎
-          </p>
+            <div class=" flex flex-col mt-4">
+                <label class="text-md mb-1 font-bold" >Message:</label>
+                <textarea name="message" id="message" rows="5" class="border-2 rounded-md text-sm outline-0"></textarea>
+            </div>
 
-          <div className="border-b-2 border-[darkgray] my-10 flex items-center justify-center gap-8">
-            <a href="https://www.facebook.com/amelevigloria.amededzisso">
-              <i className="fa-brands fa-square-facebook text-2xl hover:text-purple-400 animate-bounce hidden transition-all"></i>
-            </a>
-            <a href="https://www.instagram.com/amelevigloria?igsh=MTM3NGs5MjVvbThleA==">
-              <i className="fa-brands fa-square-instagram text-2xl hover:text-purple-400 animate-bounce hidden transition-all"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/amelevi-gloria-amededzisso-674939372?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-              <i className="fa-brands fa-linkedin text-2xl hover:text-purple-400 animate-bounce hidden transition-all"></i>
-            </a>
-            <a href="tel:+22390368806">
-              <i className="fa-brands fa-square-whatsapp text-2xl hover:text-purple-400 animate-bounce hidden transition-all"></i>
-            </a>
-          </div>
+            <button class=" w-full bg-purple-600 text-white mt-7 rounded-md p-3 text-sm " type='button'>Envoyer</button>
+           
+          </form>
+        </div>
 
-          <div className="flex flex-col">
-            <label className="text-md mb-1 font-bold">Nom & Prénom:</label>
-            <input
-              type="text"
-              name="nom_prenom"
-              value={formData.nom_prenom}
-              onChange={handleChange}
-              className="border-2 p-3 rounded-md text-sm outline-0"
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <label className="text-md mb-1 font-bold">Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="border-2 p-3 rounded-md text-sm outline-0"
-              placeholder="gloria@gmail.com"
-            />
-          </div>
-
-          <div className="flex flex-col mt-4">
-            <label className="text-md mb-1 font-bold">Message:</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="5"
-              className="border-2 rounded-md text-sm outline-0"
-            ></textarea>
-          </div>
-
-          <button
-            className="w-full bg-purple-600 text-white mt-7 rounded-md p-3 text-sm"
-            type="submit"
-          >
-            Envoyer
-          </button>
-
-          {responseMsg && (
-            <p className="mt-4 text-center text-green-600">{responseMsg}</p>
-          )}
-        </form>
-      </div>
-
-      <div className="w-1/2 h-full flex items-center justify-center">
-        <img src={moi} className="w-full object-cover" alt="mon image" />
-      </div>
+       <div class="w-1/2 h-full flex items-center justify-center" >
+          <img src={moi} class=" w-full object-cover" alt="mon image" />
+       </div>
     </section>
-  );
-};
+    
+}

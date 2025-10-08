@@ -1,6 +1,6 @@
 import '../assets/fontawesome-free-6.7.2-web/css/all.min.css'
 import moi from '../assets/images/moi1.jpg';
-import logo from '../assets/images/logo2.png'
+import logo from '../assets/images/logo3.png'
 import monCV from '/CV_Amelevi_Gloria_Amededzisso.pdf'
 
 export const About=()=>{
