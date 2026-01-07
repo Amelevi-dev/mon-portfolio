@@ -4,7 +4,8 @@ import image1 from '../assets/images/logo benjamin.png';
 import image2 from '../assets/images/logo doxa-beauty.png';
 import image3 from '../assets/images/logo germain-design.png';
 import image4 from '../assets/images/logo shifin-job.png';
-import image5 from '../assets/images/logo_ACACH-Mali-removebg-preview.png';
+import image5 from '../assets/images/nyamalogo.png';
+import image6 from '../assets/images/musokeneyalogo.png';
 
 export const Realisations = () => {
   return (
@@ -50,7 +51,7 @@ export const Realisations = () => {
           className="flex flex-col items-center justify-center gap-4 bg-white shadow-2xl py-6 px-6 rounded-lg w-full max-w-[300px]"
           data-aos="fade-up"
         >
-          <img src={image3} className="h-24 w-36 object-contain" alt="Germain Design" />
+          <a href="https://portfolio-germain-acaa5.web.app/" target='_blank'><img src={image3} className="h-24 w-36 object-contain" alt="Germain Design" /></a>
           <p className="text-center text-sm sm:text-base">
             Portfolio Pro pour Germain Design
           </p>
@@ -72,9 +73,9 @@ export const Realisations = () => {
           className="flex flex-col items-center justify-center gap-4 bg-white shadow-2xl py-6 px-6 rounded-lg w-full max-w-[300px]"
           data-aos="fade-up"
         >
-          <img src={image5} className="h-24 w-24 object-contain" alt="Collecte de déchets" />
+          <a href="https://nyama-musee.web.app/" target='_blank'><img src={image5} className="h-28 w-28 object-contain rounded-full" alt="Collecte de déchets" /></a>
           <p className="text-center text-sm sm:text-base">
-            Site web pour une entreprise de Collecte de déchets.
+            Galerie d’art interactif mettant en valeur le patrimoine culturel des pays de l'Alliance des Etats du Sahel
           </p>
         </div>
 
@@ -83,12 +84,9 @@ export const Realisations = () => {
           className="flex flex-col items-center justify-center gap-4 bg-white shadow-2xl py-6 px-6 rounded-lg w-full max-w-[300px]"
           data-aos="fade-up"
         >
-          <div className="flex items-center justify-center gap-1 mb-2 text-2xl font-bold text-center text-purple-600">
-            <i className="fas fa-door-open"></i>
-            <span>VisioTrack <br /> Pro</span>
-          </div>
+          <a href="https://musokeneya.web.app/" target='_blank'><img src={image6} className="h-36 w-36 object-contain" alt="Collecte de déchets" /></a>
           <p className="text-center text-sm sm:text-base">
-            Application web de gestion des visites et des clients
+            Plateforme d'accompagnement des femmes afin qu’elles puissent avoir accès aux soins médicaux en toute simpliciter.
           </p>
         </div>
       </div>
